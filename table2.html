@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="tbl">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>段位</td>
+        <td>编辑</td>
+    </tr>
+
+</table>
+
+<button>添加</button>
+
+<form id="ff">
+    <input type="text" id="uname" value="张三">
+    <input type="button" onclick="addTr()" value="确认"><!--这个按钮不会提交-->
+    <select name="duanwei" id="">
+        <option value="黄金">黄金</option>
+        <option value="青铜">青铜</option>
+        <option value="王者">王者</option>
+    </select>
+</form>
+
+
+<script>
+    var tbl = document.getElementById('tbl');
+    var num =0;
+    function addTr(){
+         var uname = document.getElementById('uname');
+            var str = ` <tr id="haha${++num}">
+                <td>${uname.value}</td>
+                <td>18</td>
+                <td>男</td>
+                <td>黄金</td>
+                <td><a href="javascript:del(${num})">删除</a>| <a>更新</a></td>
+            </tr>`;
+        tbl.innerHTML+=str;
+    }
+
+    function del(abc){
+        var tr = document.getElementById("haha"+abc);
+        tr.remove();
+    }
+
+</script>
+
+</body>
+</html>

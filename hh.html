@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+	    background: #f67;
+
+	}
+	</style>
+</head>
+<body>
+
+	<h1>我的标题</h1>
+
+	<ul>
+		<li><a href="http://www.baidu.com">百度</a></li>
+		<li><a href="http://www.baidu.com">百度</a></li>
+		<li><a href="http://www.baidu.com">百度</a></li>
+		<li><a href="http://www.baidu.com">百度</a></li>
+		<li><a href="http://www.baidu.com">百度</a></li>
+	</ul>
+	<table  border="1">
+<thead>
+	<trhead>
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>英文水平</th>
+		</tr>
+</thead>
+	<tbody><!-- 表格主体 -->
+		<tr><!-- 行 -->
+			<td>张三</td><!-- 单元格 -->
+			<td colspan="2">18-四级</td>
+			
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>20</td>
+			<td>六级</td>
+		</tr>
+	</tbody>
+		
+	</table><!-- 表格 -->
+	<form>
+		<table>
+			<tr>
+				<td>用户名:</td>
+				<td><input name="userName"  placeholder="叫爸爸"></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" name="pass" placeholder="请输入密码 " ></td>
+			</tr>
+			<tr>
+				<td>性别:</td>
+				<td>
+					<!-- <input type="radio" name="sex" value="man">男
+					<input type="radio" name="sex" value="woman" checked>女 -->
+					<select name="sex" >
+						<option value="girl">女</option>
+						<option value="man ">男</option>
+					
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>爱好:</td>
+				<td>
+					<input type="checkbox" name="lovehao" value="basketball">篮球
+					<input type="checkbox" name="lovehao" value="football">足球
+					<input type="checkbox" name="lovehao" value="pingpongball">乒乓球
+
+				</td>
+			</tr>
+			<tr>
+				<td>出生日期:</td>
+				<td>
+					<input type="date" name="birthday" max="1998/12/12">
+					
+
+				</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td>
+					<button>提交</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

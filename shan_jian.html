@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border: 1px solid #cccccc;
+
+            text-align: center;
+margin: 0 auto;
+        }
+        table td{
+            width: 100px;
+        }
+        td{
+
+            width: 100px;
+
+        }
+        label{
+            width: 60px;
+display: inline-block;
+        }
+        #add{
+            width: 600px;
+            margin: 0 auto;
+        }
+       #ff{
+
+            margin: 0 auto;
+        }
+        #uname{
+            width: 100px;
+        }
+        #uage{
+            width: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<table id="tab">
+<tr>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Sex</td>
+        <td>Dan</td>
+    <td  colspan="2" style="width: 200px">Edit</td>
+    </tr>
+
+</table>
+<div id="add"><button onclick="add()">Add</button></div>
+<form id="ff">
+    <table>
+        <tr>
+            <td><input type="text" id="uname"></td>
+            <td><input type="text" id="uage" maxlength="3" size="3" value="18"></td>
+            <td><label>Male</label><input type="radio" value="Male" name="sex" checked>
+    <label>Female</label><input type="radio" value="Female" name="sex"></td>
+            <td><select name="dan" id="">
+    <option value="倔强青铜">倔强青铜</option>
+    <option value="秩序白银">秩序白银</option>
+    <option value="荣耀黄金">荣耀黄金</option>
+    <option value="尊贵铂金">尊贵铂金</option>
+    <option value="永恒钻石">永恒钻石</option>
+    <option value="至尊星耀">至尊星耀</option>
+    <option value="最强王者">最强王者</option>
+    </select></td>
+            <td style="width: 200px"><input type="button" name="confirm" value="confirm" onclick="addTr()">
+            <input type="button" name="gx" value="update" onclick="update()"></td>
+        </tr>
+    </table>
+</form>
+<script>
+    var tab=document.getElementById('tab');
+    ff.style.display='none'
+    function add(){
+        var ff=document.getElementById('ff');
+        ff.style.display='block'
+        /*tab.innerHTML+=str;*/
+    }
+    var num=0;
+    function addTr(){
+        var str=` <tr id="haha${++num}">
+        <td>${ff.uname.value}</td>
+        <td>${ff.uage.value}</td>
+        <td>${ff.sex.value}</td>
+        <td>${ff.dan.value}</td>
+        <td><a href="javascript:del(${num})">delete</a>|
+        <a href="javascript:gx(${num})">gengxin</a></td>
+    </tr>`;
+        tab.innerHTML+=str;
+ ff.style.display='none'
+    }
+    function del(e){
+        var trs="haha" +e;
+     document.getElementById(trs).remove();
+    }
+function gx(e){
+ff.style.display='block';
+    var trs= document.getElementById("haha" +e);
+    var tds=trs.getElementsByTagName('td');
+    r=trs.rowIndex;
+    ff.uname.value=tds[0].innerHTML;
+    ff.uage.value=tds[1].innerHTML;
+    ff.sex.value=tds[2].innerHTML;
+    ff.dan.value=tds[3].innerHTML;
+}
+ function update(){
+     var tab=document.getElementById('tab');
+     tab.rows[r].cells[0].innerHTML=ff.uname.value;
+    tab.rows[r].cells[1].innerHTML=ff.uage.value;
+     tab.rows[r].cells[2].innerHTML=ff.sex.value;
+     tab.rows[r].cells[3].innerHTML=ff.dan.value;
+ff.style.display='none'
+}
+</script>
+</body>
+</html>

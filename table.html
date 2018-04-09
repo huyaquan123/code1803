@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'</title>
+</head>
+<body>
+<table id="tbl">
+    <tr>
+        <td>年龄</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>段位</td>
+        <td>编辑</td>
+    </tr>
+
+
+</table>
+
+<button onclick="add()">添加</button>
+
+<form id="ff" style="display: none">
+    <input type="text" name="uname">
+    <input type="button" value="确定" onclick="addTr()">
+</form>
+<script>
+    var tbl = document.getElementById('tbl');
+
+
+    function add(){
+        var ff = document.getElementById('ff');
+        ff.style.display='block';
+//        tbl.innerHTML+=str;
+    }
+    var num=0;
+    function addTr(){
+        var ff = document.getElementById('ff');
+
+         var str = ` <tr id="haha${++num}">
+            <td>18</td>
+            <td>${ff.uname.value}</td>
+            <td>性别</td>
+            <td>段位</td>
+            <td>
+             <a href="javascript:del(${num})">删除</a>
+             |<a href="javascript:del(this)">更新</a>
+            </td>
+        </tr>`;
+        tbl.innerHTML+=str;
+         ff.style.display='none';
+
+    }
+
+    function del(e){
+        var id = "haha"+e;
+        document.getElementById(id).remove();
+    }
+
+</script>
+</body>
+</html>
